@@ -1,0 +1,8 @@
+.idea/
+.vs/
+CMakeFiles/
+CMakePresets.json
+cmake-build-debug/
+CMakeCache.txt
+Makefile
+*.cmake
