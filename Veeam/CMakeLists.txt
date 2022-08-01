@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(Boost COMPONENTS thread REQUIRED)
 # Добавьте источник в исполняемый файл этого проекта.
 include_directories()
-add_executable (Veeam "Veeam.cpp" "Veeam.h" "IOManager.h" "IOManager.cpp" "MD5/MD5.cpp" "consts.h")
+add_executable (Veeam "Veeam.cpp" "Veeam.h" "IOManager.h" "IOManager.cpp" "MD5/MD5.cpp" "Consts.h" "MeasureTime.cpp" "MeasureTime.h" )
 #set(VS_DEBUGGER_COMMAND_ARGUMENTS "C:/boost/in.txt" "C:/boost/out.txt")
 target_link_libraries(Veeam ${Boost_LIBRARIES})
 

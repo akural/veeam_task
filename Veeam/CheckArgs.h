@@ -4,7 +4,7 @@
 #include <string>
 #include <tuple>
 #include "Veeam.h"
-#include "consts.h"
+#include "Consts.h"
 
 struct WrongBlock: public std::exception
 {
@@ -28,17 +28,16 @@ std::tuple<std::string, std::string, int> CheckCMD(int argc, char *argv[])
     {
         throw WrongArgs();
     }
-    std::string fileInput, fileOutput;
     int sizeBlock = MB;
-    fileInput = argv[1];
-    fileOutput = argv[2];
-// pochemy tak
+    std::string fileInput = argv[1];
+    std::string fileOutput = argv[2];
+
     if (argc == 4)
     {
         sizeBlock = std::stoi(argv[3]);
+        // Size of block must be between 512 Kb and 10 Mb
         if (sizeBlock <= 512 || sizeBlock >= 10 * 1024)
             throw WrongBlock();
     }
-
     return std::make_tuple(fileInput, fileOutput, sizeBlock);
 }

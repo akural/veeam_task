@@ -2,11 +2,12 @@
 
 using namespace std;
 
+// Global buffer for store data for input part. Practically our program uses first half of the buffer,
+// Then second. In other words one thread uses first part while another uses another part.
 shared_ptr<char[]> g_buffer;
 
 int main(int argc, char* argv[])
 {
-    int numberOfThread = 1;
     string fileIn, fileOut;
     int sizeB = MB;
     g_buffer.reset(new char[bufferSize]); // 1 GB
@@ -29,15 +30,11 @@ int main(int argc, char* argv[])
     }
 
     TimeDuration tm;
-    vector<boost::thread> thrRead;
-    vector<boost::thread> thrWrite;
-    for (int i = 0; i < numberOfThread; i++) 
-    {
-        thrRead.push_back({ ReadBuffer, bufferSize, fileIn, bufferSize });
-        thrWrite.push_back({ WriteHash, fileOut, bufferSize, sizeB });
-        thrRead[i].join();
-        thrWrite[i].join();
-    }
+
+    boost::thread thrRead{ReadBuffer, bufferSize, fileIn, bufferSize };
+    boost::thread thrWrite{ WriteHash, fileOut, bufferSize, sizeB };
+    thrRead.join();
+    thrWrite.join();
 
     return 0;
 }

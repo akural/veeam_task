@@ -32,14 +32,14 @@ private:
 class OutputManager
 {
 public:
-    OutputManager(const std::string& name);
+    OutputManager(const std::string& a_name);
     virtual ~OutputManager();
 
-    void WriteInto(char* buffer, int sizeBuffer, int sizeBlock); // When data is ready for write, it manages writing and hashing
-    void printHashIntoFile(char* buffer, int sizeBuffer, int sizeBlock, boost::atomic_int& dataReady); 
+    void WriteInto(char* a_buffer, int a_sizeBuffer, int a_sizeBlock); // When data is ready for write, it manages writing and hashing
+    void printHashIntoFile(char* a_buffer, int a_sizeBuffer, int a_sizeBlock, boost::atomic_int& a_dataReady);
 private:
-    std::ofstream file;
+    std::ofstream m_file;
 };
 
-void WriteHash(const std::string& name, int sizeBuffer, int sizeBlock);
-void ReadBuffer(int sizeBlock, const std::string& name, int sizeBuffer);
+void WriteHash(const std::string& a_name, int a_sizeBuffer, int a_sizeBlock);
+void ReadBuffer(int a_sizeBlock, const std::string& a_name, int a_sizeBuffer);
