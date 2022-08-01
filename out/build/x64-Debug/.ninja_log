@@ -1,0 +1,12 @@
+# ninja log v5
+16	1206	6810564013673517	Veeam/CMakeFiles/Veeam.dir/MD5/MD5.cpp.obj	55d9076645b554aa
+14	2415	6810564025773567	Veeam/CMakeFiles/Veeam.dir/MeasureTime.cpp.obj	8f05212f8de1e92b
+11	4832	6810564049903512	Veeam/CMakeFiles/Veeam.dir/Veeam.cpp.obj	c63c2fd31fc3ae9a
+18	4162	6810564043193508	Veeam/CMakeFiles/Veeam.dir/IOManager.cpp.obj	9055a0e8ab44bf7c
+4832	5310	6810564054301085	Veeam/Veeam.exe	dc07b7423f2e40dd
+0	11	0	clean	cdf157aee747bac5
+14	1023	6810564885723817	Veeam/CMakeFiles/Veeam.dir/MD5/MD5.cpp.obj	55d9076645b554aa
+17	2067	6810564896173806	Veeam/CMakeFiles/Veeam.dir/MeasureTime.cpp.obj	8f05212f8de1e92b
+11	3634	6810564911783903	Veeam/CMakeFiles/Veeam.dir/IOManager.cpp.obj	9055a0e8ab44bf7c
+15	4229	6810564917743055	Veeam/CMakeFiles/Veeam.dir/Veeam.cpp.obj	c63c2fd31fc3ae9a
+4229	4428	6810564919228425	Veeam/Veeam.exe	dc07b7423f2e40dd
